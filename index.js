@@ -1,13 +1,5 @@
 'use strict';
 console.log('js connected');
-const apiKey = /*your API key here*/
-
-function formatQueryParams(params) {
-  console.log('format ran');
-  const queryItems = Object.keys(params)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-  return queryItems.join('&');
-}
 
 function displayResults(responseJson) {
   // if there are previous results, remove them
