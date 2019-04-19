@@ -2,9 +2,6 @@
 console.log('js connected');
 const apiKey = /*your API key here*/
 
-// const searchURL = 'https://newsapi.org/v2/everything';
-
-
 function formatQueryParams(params) {
   console.log('format ran');
   const queryItems = Object.keys(params)
@@ -16,15 +13,12 @@ function displayResults(responseJson) {
   // if there are previous results, remove them
   console.log(responseJson);
   $('#results-list').empty();
-  // iterate through the articles array, stopping at the max number of results
-  for (let i = 0; i < responseJson.length; i++){
+  // iterate through the object/response array
+  for (let i = 0; i < responseJson.length; i++) {  //structure unknown
     
     $('#results-list').append(
-      `<li><h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
-      <p>${responseJson.articles[i].source.name}</p>
-      <p>By ${responseJson.articles[i].author}</p>
-      <p>${responseJson.articles[i].description}</p>
-      <img src='${responseJson.articles[i].urlToImage}'>
+      `<li><h3>${responseJson[i].name}</h3>
+      <li><p><a href="${responseJson[i].html_url}">${responseJson[i].html_url}</a></p>
       </li>`
     )};
   //display the results section  
@@ -32,7 +26,6 @@ function displayResults(responseJson) {
 };
 
 function getRepos(handle) {
- 
   const searchUrl = `https://api.github.com/users/${handle}/repos`;
   console.log(searchUrl);
 
