@@ -2,7 +2,7 @@
 
 const apiKey = /*your API key here*/
 
-const searchURL = 'https://newsapi.org/v2/everything';
+// const searchURL = 'https://newsapi.org/v2/everything';
 
 
 function formatQueryParams(params) {
